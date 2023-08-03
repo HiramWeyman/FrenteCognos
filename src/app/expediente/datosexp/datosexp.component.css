@@ -1,0 +1,33 @@
+.example-tab-icon {
+    margin-right: 8px;
+  }
+
+  mat-tab-group{
+    width: 170vh;
+  }
+
+  #cont{
+    width: 99%;
+    height: 360px;
+  }
+
+
+  
+  .mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-mdc-row:hover .mat-mdc-cell  {
+    border-color: currentColor;
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+  }
+
+  mat-form-field {
+    width: 80vh;
+    
+  }

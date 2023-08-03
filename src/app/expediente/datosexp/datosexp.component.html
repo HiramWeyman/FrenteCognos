@@ -1,0 +1,115 @@
+<h3><b>Estefania Peligrini</b></h3>
+<p>Paciente ID: {{ id }}</p>
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">account_box</mat-icon>
+            Generales
+        </ng-template>
+        Content 1
+    </mat-tab>
+
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">assignment</mat-icon>
+            Datos Cognitivos
+        </ng-template>
+        Content 2
+    </mat-tab>
+
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">description</mat-icon>
+            Problemática
+        </ng-template>
+
+        Content 3
+    </mat-tab>
+
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">feedback</mat-icon>
+            Antecedentes
+        </ng-template>
+
+        Content 3
+    </mat-tab>
+
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">healing</mat-icon>
+            Estado de Salud
+        </ng-template>
+
+        Content 3
+    </mat-tab>
+
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">folder_shared</mat-icon>
+            Informes
+        </ng-template>
+        <br>  
+        <div id="cont" class="mat-elevation-z8">
+            <mat-form-field>
+                <mat-label>Buscar</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+            </mat-form-field>
+            <button mat-fab extended color="primary">
+                <mat-icon>create_new_folder</mat-icon>
+                Generar Informe
+            </button>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="terapeuta">
+                    <th mat-header-cell *matHeaderCellDef> Terapeuta </th>
+                    <td mat-cell *matCellDef="let element"> {{element.terapeuta}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="fecha">
+                    <th mat-header-cell *matHeaderCellDef> Fecha </th>
+                    <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="documento">
+                    <th mat-header-cell *matHeaderCellDef> Documento </th>
+                    <td mat-cell *matCellDef="let element"> {{element.documento}} </td>
+                </ng-container>
+
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+             <!--    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
+                <tr mat-row (click)="clickedRows.add(row)" [class.demo-row-is-clicked]="clickedRows.has(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10]" aria-label="Select page of users"></mat-paginator>
+        </div>
+
+        <ul>
+            <li *ngFor="let clickedRow of clickedRows">
+              Clicked on {{clickedRow.terapeuta}}
+            </li>
+          </ul>
+
+    </mat-tab>
+
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">group</mat-icon>
+            Sessiones
+        </ng-template>
+
+        Content 3
+    </mat-tab>
+</mat-tab-group>

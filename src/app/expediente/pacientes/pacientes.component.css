@@ -1,0 +1,22 @@
+/* .tableFixHead          { overflow-y: auto; height: 330px; }
+.tableFixHead thead th { position: sticky; top: 0; }
+
+/* Just common table stuff. Really. */
+/* table  { border-collapse: collapse; width: 100%; font-size: 11px;}
+th, td { padding: 8px 16px; }
+th     { background:#eee; }
+button{margin-right: 13px;}
+.col-center{
+    float: none;
+    margin-left: 30%;
+    margin-right: 30%;
+  }  */
+
+  table {
+    width: 100vh;
+
+  }
+  mat-form-field {
+    width: 100vh;
+    
+  }

@@ -1,0 +1,58 @@
+<mat-toolbar>
+    <button mat-icon-button *ngIf="sidenav.mode==='over'" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+      <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+    </button>
+  
+    <span>COGNOS</span>
+  </mat-toolbar>
+  
+  <mat-sidenav-container class="example-container" >
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8"mode="side" opened>
+      <img class="avatar mat-elevation-z8" src="assets/images/mujer1.jpg">
+      <h4 class="name">Marcela Chairez</h4>
+      <p class="designation">Lic. en Psicologia</p>
+      <mat-divider></mat-divider>
+      <button mat-button class="estilo1">
+        <mat-icon class="estilo">person</mat-icon>
+        <span class="estilo"><a [routerLink]="['expediente/pacientes']">Pacientes</a></span>
+      </button>
+      <button mat-button class="estilo1">
+        <mat-icon class="estilo">person</mat-icon>
+        <span class="estilo">Sessiones</span>
+      </button>
+      <button mat-button class="estilo1">
+        <mat-icon class="estilo">person</mat-icon>
+        <span class="estilo">Reportes</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-button class="estilo1">
+        <mat-icon class="estilo">logout</mat-icon>
+        <span class="estilo"><a (click)="logout()">Salir</a></span>
+      </button>
+      <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink=""><mat-icon>label_important</mat-icon>Archivos Compartidos</a>
+      <mat-divider></mat-divider>
+      <mat-expansion-panel >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon>folder_open</mat-icon>Catalogos
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink=""><mat-icon>label_important</mat-icon>Catalogo de Actividades</a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink=""><mat-icon>label_important</mat-icon>Catalogo de Perfiles</a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink=""><mat-icon>label_important</mat-icon>Catalogo de Plazas</a>
+    
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/catservicios"><mat-icon>label_important</mat-icon>Catalogo de Servicios</a>
+       
+    </mat-expansion-panel> 
+  -->
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <div class="content mat-elevation-z10">
+        <router-outlet></router-outlet> 
+     <!--    <img style="width: 900px;height: 300px;" src="assets/images/cognos_perforado.png"> -->
+        
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
